@@ -16,13 +16,12 @@ export function Countdown() {
     const minutesDigits = String(minutes).padStart(2, '0')
     const secondsDigits = String(seconds).padStart(2, '0')
 
-
     useEffect(() => {
         let interval: number;
 
         if (activeCycle) {
             interval = setInterval(() => {
-                const elapsedSeconds = differenceInSeconds(new Date(), activeCycle.startDate);
+                const elapsedSeconds = differenceInSeconds(new Date(), new Date(activeCycle.startDate));
 
                 if (elapsedSeconds >= durationInSeconds) {
 
